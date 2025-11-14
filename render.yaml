@@ -4,9 +4,9 @@ previews:
 
 services:
 - type: web
-  plan: starter
+  plan: Starter
   previews:
-    plan: starter
+    plan: Starter
   name: express-backend
   env: node
   buildCommand: cd backend && yarn
@@ -21,9 +21,9 @@ services:
       property: connectionString
 - type: web
   name: render-todo
-  plan: starter
+  plan: Starter
   previews:
-    plan: starter
+    plan: Starter
   env: static
   buildCommand: cd frontend && yarn install && yarn build
   staticPublishPath: ./frontend/build
