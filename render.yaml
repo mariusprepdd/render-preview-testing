@@ -21,7 +21,7 @@ services:
       property: connectionString
 - type: web
   name: render-todo
-  plan: free
+  plan: standard
   runtime: static
   buildCommand: cd frontend && yarn install && yarn build
   staticPublishPath: ./frontend/build
