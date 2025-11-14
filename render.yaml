@@ -4,11 +4,11 @@ previews:
 
 services:
 - type: web
-  plan: Starter
+  plan: starter
   previews:
-    plan: Starter
+    plan: starter
   name: express-backend
-  env: node
+  runtime: node
   buildCommand: cd backend && yarn
   startCommand: cd backend && yarn start
   envVars:
@@ -21,10 +21,10 @@ services:
       property: connectionString
 - type: web
   name: render-todo
-  plan: Starter
+  plan: starter
   previews:
-    plan: Starter
-  env: static
+    plan: starter
+  runtime: static
   buildCommand: cd frontend && yarn install && yarn build
   staticPublishPath: ./frontend/build
   envVars:
