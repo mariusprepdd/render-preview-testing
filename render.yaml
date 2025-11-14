@@ -4,9 +4,9 @@ previews:
 
 services:
 - type: web
-  plan: free
+  plan: starter
   previews:
-    plan: free
+    plan: starter
   name: express-backend
   env: node
   buildCommand: cd backend && yarn
@@ -21,9 +21,9 @@ services:
       property: connectionString
 - type: web
   name: render-todo
-  plan: free
+  plan: starter
   previews:
-    plan: free
+    plan: starter
   env: static
   buildCommand: cd frontend && yarn install && yarn build
   staticPublishPath: ./frontend/build
@@ -37,5 +37,5 @@ databases:
 - name: postgres_db
   databaseName: test_db
   user: test_user
-  plan: free
-  previewPlan: free
+  plan: starter
+  previewPlan: starter
