@@ -38,5 +38,4 @@ databases:
   databaseName: test_db
   user: test_user
   plan: free
-  previews:
-    plan: free
+  previewPlan: free
