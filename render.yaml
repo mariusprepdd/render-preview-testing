@@ -2,34 +2,33 @@ projects:
   - name: test-deploy-project
     environments:
       - name: production
-      
-      services:
-      - type: web
-        plan: starter
-        previews:
+        services:
+        - type: web
           plan: starter
-        name: express-backend
-        runtime: node
-        buildCommand: cd backend && yarn
-        startCommand: cd backend && yarn start
-        envVars:
-        - fromGroup: test-deploy-env-vars
-        - key: DB_CONNECTION_STRING
-          fromDatabase:
-            name: postgres_db
-            property: connectionString
-      - type: web
-        name: render-todo
-        runtime: static
-        buildCommand: cd frontend && yarn install && yarn build
-        staticPublishPath: ./frontend/build
+          previews:
+            plan: starter
+          name: express-backend
+          runtime: node
+          buildCommand: cd backend && yarn
+          startCommand: cd backend && yarn start
+          envVars:
+          - fromGroup: test-deploy-env-vars
+          - key: DB_CONNECTION_STRING
+            fromDatabase:
+              name: postgres_db
+              property: connectionString
+        - type: web
+          name: render-todo
+          runtime: static
+          buildCommand: cd frontend && yarn install && yarn build
+          staticPublishPath: ./frontend/build
 
-      databases:
-      - name: postgres_db
-        databaseName: test_db
-        user: test_user
-        plan: basic-256mb
-        previewPlan: basic-256mb
+        databases:
+        - name: postgres_db
+          databaseName: test_db
+          user: test_user
+          plan: basic-256mb
+          previewPlan: basic-256mb
 
 previews:
   generation: manual
