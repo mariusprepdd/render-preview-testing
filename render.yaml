@@ -22,6 +22,8 @@ projects:
           runtime: static
           buildCommand: cd frontend && yarn install && yarn build
           staticPublishPath: ./frontend/build
+          envVars:
+          - fromGroup: test-deploy-env-vars
 
         databases:
         - name: postgres_db
