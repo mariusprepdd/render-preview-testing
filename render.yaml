@@ -2,10 +2,6 @@ projects:
   - name: test-deploy-project
     environments:
       - name: production
-
-      previews:
-        generation: manual
-        expireAfterDays: 2
       
       services:
       - type: web
@@ -34,3 +30,7 @@ projects:
         user: test_user
         plan: basic-256mb
         previewPlan: basic-256mb
+
+previews:
+  generation: manual
+  expireAfterDays: 2
